@@ -1,0 +1,297 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap");
+
+:root {
+  --left-padding: 30px;
+  --White: hsl(0, 0%, 100%);
+  --Light-grayish-violet: hsl(270, 3%, 87%);
+  --Dark-grayish-violet: hsl(279, 6%, 55%);
+  --Very-dark-violet: hsl(278, 68%, 11%);
+  --label-size: 0.7rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 18px;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 500;
+  background-color: gray;
+}
+
+.container {
+  width: 1120px;
+  max-width: 100%;
+  height: 700px;
+  max-height: 100%;
+  margin: 0 auto;
+  background-color: var(--White);
+  display: flex;
+  flex-direction: row;
+}
+
+.left-side {
+  width: 35%;
+  height: 100%;
+  background-image: url(images/bg-main-desktop.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+}
+
+.card-front {
+  background-image: url(images/bg-card-front.png);
+  background-size: contain;
+  width: 365px;
+  height: 200px;
+  border-radius: 10px;
+  position: relative;
+  top: 20%;
+  left: 35%;
+}
+
+#card-logo {
+  width: 100px;
+  padding: 25px 0 50px 30px;
+}
+
+.card-details {
+  color: var(--White);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 var(--left-padding);
+  font-size: 0.8rem;
+}
+
+#card-number {
+  padding-bottom: 10px;
+  color: var(--White);
+  padding-left: var(--left-padding);
+  font-size: 1.7rem;
+  display: block;
+  justify-content: stretch;
+}
+
+.card-back {
+  background-image: url(images/bg-card-back.png);
+  background-size: contain;
+  width: 365px;
+  height: 200px;
+  border-radius: 10px;
+  position: relative;
+  top: 25%;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+#cvc {
+  margin-right: 13%;
+  color: var(--White);
+  font-size: 0.8rem;
+}
+
+.right-side {
+  width: 65%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-form {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 15%;
+}
+
+form > label {
+  font-size: var(--label-size);
+  font-weight: 600;
+}
+
+form > input,
+button {
+  width: 100%;
+  height: 35px;
+  margin-bottom: 20px;
+}
+
+form > input,
+#month,
+#year,
+#cvc-code {
+  padding-left: 10px;
+  border-radius: 10px;
+  border: 1px solid var(--Light-grayish-violet);
+  color: black;
+}
+
+form > input::-webkit-outer-spin-button,
+form > input::-webkit-inner-spin-button,
+.sm-inputs::-webkit-outer-spin-button,
+.sm-inputs::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+form > input:hover,
+.sm-inputs:hover {
+  border: 1px solid hsl(249, 99%, 64%);
+  cursor: pointer;
+}
+
+form > input:focus-visible,
+.sm-inputs:focus-visible {
+  outline: 1px solid hsl(278, 94%, 30%);
+}
+
+form ::-webkit-input-placeholder {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 500;
+  color: var(--Light-grayish-violet);
+}
+
+#date-and-cvc {
+  display: flex;
+  flex-direction: row;
+}
+
+#date-side,
+#cvc-side {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: left;
+  align-items: inherit;
+  font-size: var(--label-size);
+}
+
+#date-side,
+#cvc-side > label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+#cvc-side {
+  display: flex;
+  flex-direction: column;
+}
+
+#month,
+#year {
+  width: 40%;
+  margin-right: 10px;
+  height: 35px;
+  margin-top: 10px;
+}
+
+#cvc-code {
+  width: 100%;
+  height: 35px;
+}
+
+button {
+  background-color: var(--Very-dark-violet);
+  color: var(--White);
+  border-radius: 10px;
+  border: none;
+}
+
+.error {
+  color: hsl(0, 100%, 66%);
+  font-size: 0.7rem;
+}
+
+.complete {
+  width: 300px;
+  height: 300px;
+  display: none;
+  flex-direction: column;
+  margin-left: 15%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.complete > img {
+  width: 50px;
+}
+
+.complete > p {
+  color: var(--Dark-grayish-violet);
+}
+
+@media screen and (max-width: 376px) {
+  .container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .left-side {
+    width: 100%;
+    height: 50%;
+    background-image: url(images/bg-main-mobile.png);
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .right-side {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card-back {
+    width: 300px;
+    height: 164px;
+    top: 2%;
+    left: 15%;
+  }
+
+  .card-front {
+    width: 300px;
+    height: 164px;
+    top: -18%;
+    left: 5%;
+    z-index: 1;
+  }
+
+  #card-logo {
+    width: 80px;
+    padding-bottom: 20px;
+  }
+
+  .card-details {
+    font-size: 0.7rem;
+  }
+
+  #card-number {
+    font-size: 1.3rem;
+  }
+
+  .card-form,
+  .complete {
+    margin-left: 0;
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
