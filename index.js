@@ -44,7 +44,6 @@ function changeNumber() {
     }
   }
   cardNumber.textContent = numberWithSpace;
-  // clientNumber.value = numberWithSpace;
 }
 
 month.addEventListener("keyup", changeMonth);
